@@ -1,0 +1,44 @@
+# Deployment  backend
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend-restapp
+    tier: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend   ## should be same as myapp2 label in template metadata
+  template:
+    metadata:        # Dict
+      name: backend-pod
+      labels:         # Dict
+        app: backend
+    spec:
+      containers:      # List
+        - name: backend-container
+          image: stacksimplify/kube-helloworld:1.0.0
+          ports:
+            - containerPort: 8080      
+
+---
+## node port 
+apiVersion: v1  # string
+kind: Service     # string
+metadata:        # Dict
+  name: my-backend-service
+  labels:         # Dict
+    app: backend-nodeport
+
+spec:
+  #type: Cluster Ip is a default service
+  selector:
+    app: backend
+  ports:
+    - name: http
+      port: 8080  # service port
+      targetPort: 8080  # container port
+      
