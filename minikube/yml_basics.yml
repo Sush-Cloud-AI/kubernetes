@@ -1,0 +1,31 @@
+# key value pair
+name: sam
+age: 30
+city: Bangalore
+
+#Dictinoary
+person:
+  name: kalyan
+  age: 23
+  city: Chennai
+
+# Array/lists
+
+Hobby:
+  name: danny
+  age: 23
+  city: Chennai
+  hobbies:  ## list 
+  - cooking
+  - cycling 
+  subject: [math, english ]  ## list
+
+--- # this will seperate the yaml file 
+
+## Multiple list
+friends:
+  - name: friends1
+    age: 23
+  - name: friend2
+    age: 5
+
