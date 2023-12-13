@@ -25,7 +25,7 @@ spec:
 apiVersion: v1  # string
 kind: Service      # string
 metadata:        # Dict
-  name: myapp2-pod-nodeport-service
+  name: myapp2-rs-nodeport-service
   labels:         # Dict
     app: myapp2-nodeport
 
