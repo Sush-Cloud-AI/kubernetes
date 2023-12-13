@@ -33,19 +33,3 @@ spec:
       port: 80  # service port
       targetPort: 80  # container port
       nodePort: 31231  # nodeport
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: myapp-pod-nodeport-service  # Name of the Service
-# spec:
-#   type: NodePort
-#   selector:
-#   # Loadbalance traffic across Pods matching this label selector
-#     app: myapp
-#   # Accept traffic sent to port 80    
-#   ports: 
-#     - name: http
-#       port: 80    # Service Port
-#       targetPort: 80 # Container Port
-#       nodePort: 31231 # NodePort
