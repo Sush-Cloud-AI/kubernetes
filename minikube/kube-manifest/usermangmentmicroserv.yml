@@ -4,6 +4,7 @@ metadata:
   name: usermgmt-microservice
   labels:
     app: usermgmt-restapp
+
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,12 @@ spec:
       labels:
         app: usermgmt-restapp
     spec:
+      initContainers:
+          - name: init-db
+            image: busybox:1.31
+            command: ['sh', '-c', 'sleep 180;']
+
+
       containers:
         - name: usermgmt-restapp
           image: stacksimplify/kube-usermanagement-microservice:1.0.0
